@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TERMIAL LIBRARY-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"
+    />
 
-  <!-- TERMIAL LIBRARY-->
-  <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
+    <!-- P5.JS LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
 
-  <!-- P5.JS LIBRARY -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Spider Mansion Web Demo</title>
+  </head>
 
-  <title>Spider Mansion Web Demo</title>
+  <body>
+    <!-- CURSOR STYLING -->
+    <style type="text/css">
+      * {
+        cursor: url(https://cur.cursors-4u.net/holidays/hol-1/hol59.cur), auto !important;
+      }</style
+    ><a
+      href="https://www.cursors-4u.com/cursor/2005/10/31/hol59.html"
+      target="_blank"
+      title="Spider"
+      ><img
+        src="https://cur.cursors-4u.net/cursor.png"
+        border="0"
+        alt="Spider"
+        style="position: absolute; top: 0px; right: 0px"
+    /></a>
+    <!-- CURSOR STYLING -->
 
-</head>
+    <!-- p5 LOADING -->
 
-<body>
+    <main class="canvasLocation">
+      <script src="/p5scripts/aDialogues.js"></script>
+      <script src="/p5scripts/aDefGlob_basic.js"></script>
 
-  <!-- CURSOR STYLING -->
-  <style type="text/css">
-    * {
-      cursor: url(https://cur.cursors-4u.net/holidays/hol-1/hol59.cur), auto !important;
-    }
-  </style><a href="https://www.cursors-4u.com/cursor/2005/10/31/hol59.html" target="_blank" title="Spider"><img
-      src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Spider"
-      style="position:absolute; top: 0px; right: 0px;" /></a>
-  <!-- CURSOR STYLING -->
+      <script src="/p5classes/DialogueBox.js"></script>
+      <script src="/p5classes/ShowHint.js"></script>
 
-  <!-- p5 LOADING -->
+      <script src="/p5scripts/changeScene.js"></script>
+      <script src="/p5scripts/setup.js"></script>
+      <script src="/p5scripts/testing_Debug.js"></script>
 
-  <main class="canvasLocation">
-    <script src="/p5scripts/aDialogues.js"></script>
-    <script src="/p5scripts/aDefGlob_basic.js"></script>
+      <script src="/p5sketch.js"></script>
+    </main>
 
-    <script src="/p5classes/DialogueBox.js"></script>
-    <script src="/p5classes/ShowHint.js"></script>
+    <!-- p5 LOADING -->
 
-    <script src="/p5scripts/changeScene.js"></script>
-    <script src="/p5scripts/setup.js"></script>
-    <script src="/p5scripts/testing_Debug.js"></script>
-
-    <script src="/p5sketch.js"></script>
-  </main>
-
-  <!-- p5 LOADING -->
-
-  <!-- TERMINAL -->
-  <div class="inter" id="commandDiv"></div>
-  <script src="index.js"></script>
-  <script src="script.js"></script>
-  <!-- TERMINAL -->
-
-</body>
-
+    <!-- TERMINAL -->
+    <div class="inter" id="commandDiv"></div>
+    <script src="script.js"></script>
+    <!-- TERMINAL -->
+  </body>
 </html>

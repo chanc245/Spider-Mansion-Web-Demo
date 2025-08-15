@@ -4,46 +4,49 @@
 // ---------- GEMINI API ---------- //
 // ---------- GEMINI API ---------- //
 
-import express from 'express';
-import cors from 'cors';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-import 'dotenv/config';
-import { GoogleGenerativeAI } from "@google/generative-ai"
+import express from "express";
+import cors from "cors";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+import "dotenv/config";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const port = process.env.PORT || 3001;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(express.static(join(__dirname, 'public')));
+app.use(express.static(join(__dirname, "public", "index.html")));
 
-app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'index.html'));
+app.get("/", (req, res) => {
+  res.sendFile(join(__dirname, "index.html"));
 });
 
-app.post('/submit', async (req, res) => {
+app.post("/submit", async (req, res) => {
   let input = req.body.input;
 
   try {
     const aiResponse = await getGenResultAsString(input);
     res.json({ ai: aiResponse });
   } catch (error) {
-    console.error('Gemini Error:', error);
-    res.status(500).json({ error: 'Failed to generate output. Please try again.' });
+    console.error("Gemini Error:", error);
+    res
+      .status(500)
+      .json({ error: "Failed to generate output. Please try again." });
   }
 });
 
 async function getGenResultAsString(input) {
-  console.log("--Run Gemini")
+  console.log("--Run Gemini");
 
   const genAI = new GoogleGenerativeAI(process.env.GOOGLEAPIKEY);
 
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
   const prompt = input;
 
